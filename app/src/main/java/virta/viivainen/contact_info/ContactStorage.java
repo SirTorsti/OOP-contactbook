@@ -40,7 +40,6 @@ public class ContactStorage {
     }
 
     public void sortByGroup() {
-        sortAlphabetically();
         ArrayList<Contact> workContacts = new ArrayList<>();
         ArrayList<Contact> otherContacts = new ArrayList<>();
         Iterator<Contact> iterator = contacts.iterator();

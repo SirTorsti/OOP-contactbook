@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">contact_info</string>
     <string name="contact_group_personal">Henkilökohtainen</string>
-    <string name="contact_group_work">Työt</string>
+    <string name="contact_group_work">Työ</string>
 </resources>

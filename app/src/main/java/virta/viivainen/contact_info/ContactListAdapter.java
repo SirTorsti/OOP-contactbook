@@ -29,24 +29,24 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactViewHolder> 
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
         Log.d("ContactListAdapter", "onBindViewHolder() called for position: " + position);
         holder.profileImage.setImageResource(R.drawable.profile);
-        holder.name.setText(String.format("%s %s", contacts.get(position).getFirstName(), contacts.get(position).getLastName()));
-        holder.phoneNumber.setText(contacts.get(position).getPhoneNumber());
-        holder.contactGroup.setText(contacts.get(position).getContactGroup());
-        holder.detailsButton.setImageResource(R.drawable.info_image);
-        holder.removeButton.setImageResource(R.drawable.delete_image);
-        holder.removeButton.setOnClickListener(view -> {
+        holder.ContactNameText.setText(String.format("%s %s", contacts.get(position).getFirstName(), contacts.get(position).getLastName()));
+        holder.ContactNumberText.setText(contacts.get(position).getNumber());
+        holder.ContactGroupText.setText(contacts.get(position).getContactGroup());
+        holder.ContactDetailsButton.setImageResource(R.drawable.info_image);
+        holder.ContactDeleteButton.setImageResource(R.drawable.delete_image);
+        holder.ContactDeleteButton.setOnClickListener(view -> {
            int pos = holder.getAdapterPosition();
            ContactStorage.getInstance().removeContact(pos);
            notifyItemRemoved(pos);
         });
 
-        holder.detailsButton.setOnClickListener(view -> {
-            if(holder.phoneNumber.getVisibility() == View.VISIBLE) {
-                holder.phoneNumber.setVisibility(View.GONE);
-                holder.contactGroup.setVisibility(View.GONE);
+        holder.ContactDetailsButton.setOnClickListener(view -> {
+            if(holder.ContactNumberText.getVisibility() == View.VISIBLE) {
+                holder.ContactNumberText.setVisibility(View.GONE);
+                holder.ContactGroupText.setVisibility(View.GONE);
             } else {
-                holder.phoneNumber.setVisibility(View.VISIBLE);
-                holder.contactGroup.setVisibility(View.VISIBLE);
+                holder.ContactNumberText.setVisibility(View.VISIBLE);
+                holder.ContactGroupText.setVisibility(View.VISIBLE);
             }
         });
     }

@@ -40,22 +40,13 @@ public class ContactStorage {
     }
 
     public void sortByGroup() {
-        sortAlphabetically();
-        ArrayList<Contact> workContacts = new ArrayList<>();
-        ArrayList<Contact> otherContacts = new ArrayList<>();
-        Iterator<Contact> iterator = contacts.iterator();
-
-        while (iterator.hasNext()) {
-            Contact currentContact = iterator.next();
-            if (currentContact.getContactGroup().equalsIgnoreCase("Työt")) {
-                workContacts.add(currentContact);
-            } else {
-                otherContacts.add(currentContact);
+        contacts.sort((c1, c2) -> {
+            int groupCompare = c1.getContactGroup().compareToIgnoreCase(c2.getContactGroup());
+            if (groupCompare == 0) {
+                return c1.getFirstName().compareToIgnoreCase(c2.getFirstName());
             }
-        }
-
-        contacts.clear();
-        contacts.addAll(workContacts);
-        contacts.addAll(otherContacts);
+            return c1.getContactGroup().equalsIgnoreCase("Työ") ? -1 : 1;
+        });
     }
+
 }

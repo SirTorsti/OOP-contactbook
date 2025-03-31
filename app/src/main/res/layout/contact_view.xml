@@ -33,13 +33,15 @@
             android:id="@+id/ContactNumberText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="puh nro" />
+            android:text="ContactNumberText"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/ContactGroupText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ryhmä" />
+            android:text="ryhmä"
+            android:visibility="gone" />
 
     </LinearLayout>
 

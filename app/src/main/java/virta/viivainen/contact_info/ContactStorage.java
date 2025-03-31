@@ -40,6 +40,7 @@ public class ContactStorage {
     }
 
     public void sortByGroup() {
+        sortAlphabetically();
         ArrayList<Contact> workContacts = new ArrayList<>();
         ArrayList<Contact> otherContacts = new ArrayList<>();
         Iterator<Contact> iterator = contacts.iterator();
@@ -52,8 +53,7 @@ public class ContactStorage {
                 otherContacts.add(currentContact);
             }
         }
-        Collections.sort(workContacts, Comparator.comparing(Contact::getFirstName));
-        Collections.sort(otherContacts, Comparator.comparing(Contact::getFirstName));
+
         contacts.clear();
         contacts.addAll(workContacts);
         contacts.addAll(otherContacts);

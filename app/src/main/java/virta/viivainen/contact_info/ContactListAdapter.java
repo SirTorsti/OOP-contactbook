@@ -34,6 +34,7 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactViewHolder> 
         holder.ContactGroupText.setText(contacts.get(position).getContactGroup());
         holder.ContactDetailsButton.setImageResource(R.drawable.info_image);
         holder.ContactDeleteButton.setImageResource(R.drawable.delete_image);
+
         holder.ContactDeleteButton.setOnClickListener(view -> {
            int pos = holder.getAdapterPosition();
            ContactStorage.getInstance().removeContact(pos);

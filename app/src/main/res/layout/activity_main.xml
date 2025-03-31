@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/SortAlphabeticallyButton" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvContactList"
+        android:id="@+id/ListContactsRV"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="50dp"

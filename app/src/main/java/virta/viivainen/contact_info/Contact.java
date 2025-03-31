@@ -28,4 +28,8 @@ public class Contact {
     public String getContactGroup() {
         return contactGroup;
     }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
 }
